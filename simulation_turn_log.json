@@ -1,0 +1,30 @@
+{
+  "turn": 14,
+  "phase": "AI_EXECUTION",
+  "belief_state_prediction": {
+    "enemy_probable_hand_size": 4,
+    "high_probability_cards": ["Boss's Orders", "Basic Water Energy"]
+  },
+  "threat_assessment": {
+    "enemy_max_damage_potential": 120,
+    "our_active_hp": 250,
+    "status": "SAFE"
+  },
+  "meta_controller_output": {
+    "macro_goal": "RESOURCE_DENIAL",
+    "primary_target_id": "enemy_bench_slot_3",
+    "target_reason": "Highest Retreat Cost (4)"
+  },
+  "tactical_controller_execution_sequence": [
+    {"step": 1, "action": "DRAW_CARD", "chunking_rule": "FORCED_FIRST"},
+    {"step": 2, "action": "PLAY_SUPPORTER", "card": "Boss's Orders", "target": "enemy_bench_slot_3"},
+    {"step": 3, "action": "PLAY_ITEM", "card": "Crushing Hammer", "result": "Heads - Discarded 1 Enemy Energy"},
+    {"step": 4, "action": "ATTACH_ENERGY", "target": "our_active_pokemon"},
+    {"step": 5, "action": "PASS_TURN", "reason": "No attack required for Resource Denial"}
+  ],
+  "intrinsic_reward_evaluation": {
+    "previous_resource_delta": 2,
+    "current_resource_delta": 4,
+    "reward_issued_to_meta": 2.0
+  }
+}
